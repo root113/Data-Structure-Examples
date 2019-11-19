@@ -29,10 +29,10 @@ node * insertSeq(node *r,int x){
 		return r;
 	}
 	else if (r->next == NULL){
-		if(r->next > x){
+		if(r->x > x){
 			node * temp = (node *)malloc(sizeof(node));
 			temp->x = x;
-			temp->next = root;
+			temp->next = r;
 			r = temp;
 			return temp;
 		}
@@ -40,7 +40,7 @@ node * insertSeq(node *r,int x){
 			node * temp = (node *)malloc(sizeof(node));
 			temp->x = x;
 			temp->next = NULL;
-			r->next = temp
+			r->next = temp;
 			return r;
 		}
 	}
