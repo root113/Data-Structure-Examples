@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #define ARR 10
 
 struct stack{
@@ -44,8 +43,7 @@ int main(){
 	
 	i = pop(&s);
 	printf("\nItem popped: %d",i);
-	
-	getch();
+	puts("");
 }
 
 /*Initializes the stack*/
@@ -68,7 +66,7 @@ int pop(struct stack *s){
 	int data;
 	if(s->top == -1){
 		printf("\nStack is empty!");
-		return NULL;
+		return -1;
 	}
 	data = s->a[s->top];
 	s->top--;
