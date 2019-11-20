@@ -7,15 +7,21 @@ struct n {
 };
 typedef n node;
 
+void print(node * root){
+	while(root!=NULL){
+		printf("%d -> ",root->data);
+		root = root->next;
+	}
+}
+
 int pop(node *root){
 	if(root == NULL){
 		printf("Stack is empty.\n");
 		return -1;
 	}
 	node *iter = root;
-	while(iter->next->next != NULL){
+	while(iter->next->next != NULL)
 		iter = iter->next;
-	}
 	node *temp = iter->next;
 	int rvalue = temp->data;
 	free(temp);
@@ -45,7 +51,8 @@ int main() {
 	node *s = NULL;
 	s = push(s,10);
 	s = push(s,20);
-	
+	print(s);
+	fflush(stdout);
 	perror("Passed\n");
-	printf("%d -> ",pop(s));
+	printf("%d -> \n",pop(s));
 }
