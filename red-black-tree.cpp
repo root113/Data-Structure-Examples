@@ -211,7 +211,7 @@ int main()
     insert(&root,35);
     insert(&root,25);
     insert(&root,37);
-    printf("inorder Traversal Is : ");
+    printf("Inorder Traversal is : ");
     inorder(root);
  
     return 0;
